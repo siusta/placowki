@@ -23,8 +23,8 @@ public class PlaceApi {
 
     @GetMapping("/all")
     public ResponseEntity<List<Place>> getAllPlaces(){
-        List<Place>carList=placeService.getAllPlaces();
-        if(!carList.isEmpty()) {return new ResponseEntity<>(carList, HttpStatus.FOUND);}
+        List<Place>placeList=placeService.getAllPlaces();
+        if(!placeList.isEmpty()) {return new ResponseEntity<>(placeList, HttpStatus.FOUND);}
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
