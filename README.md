@@ -1,6 +1,6 @@
 Api z placówkami wypożyczalni samochodów na SOA<br>
 <br>
-https://placowki.herokuapp.com/places
+https://placowki.herokuapp.com/places<br>
 <br>
 /all                                  <- getAllPlaces<br>
 /getById/{id}                         <- getPlaceByID<br>
