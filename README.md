@@ -1,15 +1,15 @@
-Api z placówkami wypożyczalni samochodów na SOA
-
+Api z placówkami wypożyczalni samochodów na SOA<br>
+<br>
 https://placowki.herokuapp.com/places
-
-/all                                  <- getAllPlaces
-/getById/{id}                         <- getPlaceByID
-/getByName                            <- getPlaceByName (przez parametr)
-/getByCity                            <- getPlaceByCity (przez parametr)
-/add                                  <- addPlace (body)
-/delete/{id}                          <- deletePlace
-/editPlace/{id}                       <- editPlace (body)
-/editAvailable/{id}/{availableCars}   <- editAvailableCars
-/editAllCars/{id}/{allCars}           <- editAllCars
-
+<br>
+/all                                  <- getAllPlaces<br>
+/getById/{id}                         <- getPlaceByID<br>
+/getByName                            <- getPlaceByName (przez parametr)<br>
+/getByCity                            <- getPlaceByCity (przez parametr)<br>
+/add                                  <- addPlace (body)<br>
+/delete/{id}                          <- deletePlace<br>
+/editPlace/{id}                       <- editPlace (body)<br>
+/editAvailable/{id}/{availableCars}   <- editAvailableCars<br>
+/editAllCars/{id}/{allCars}           <- editAllCars<br>
+<br>
 Przykładowe placówki są w "sample data.txt".
