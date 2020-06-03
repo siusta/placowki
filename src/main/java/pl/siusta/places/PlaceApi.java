@@ -59,5 +59,18 @@ public class PlaceApi {
         placeService.deletePlace(id);
     }
 
+    @PutMapping("/editAllCars/{id}/{allCars}")
+    public void editAllCars(@PathVariable Long id,@PathVariable int allCars){
+        placeService.editAllCars(id,allCars);
+    }
 
+    @PutMapping("/editAvailable/{id}/{availableCars}")
+    public void editAviableCars(@PathVariable Long id,@PathVariable int availableCars){
+        placeService.editAvailableCars(id,availableCars);
+    }
+
+    @PutMapping("/editPlace/{id}")
+    public @ResponseBody void  editPlace(@PathVariable Long id, @RequestBody Place place){
+        placeService.editPlace(id,place);
+    }
 }

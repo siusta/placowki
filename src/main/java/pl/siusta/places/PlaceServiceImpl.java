@@ -32,13 +32,10 @@ public class PlaceServiceImpl implements PlaceService{
         return place.get();
     }
 
-
     @Override
     public void addPlace(Place place){
         placeRepo.save(place);
     }
-
-
 
     @Override
     public List<Place> getPlaceByCity(String city) {
@@ -48,8 +45,27 @@ public class PlaceServiceImpl implements PlaceService{
 
     @Override
     public void deletePlace(Long id) {
-        Place placeToDelete = getPlaceById(id);
-        placeRepo.delete(placeToDelete);
+        placeRepo.deleteById(id);
     }
 
+    @Override
+    public void editAllCars(Long id, int allCars) {
+        Place place = getPlaceById(id);
+        place.setAllCars(allCars);
+        placeRepo.save(place);
+    }
+
+    @Override
+    public void editAvailableCars(Long id, int availableCars) {
+        Place place = getPlaceById(id);
+        place.setAvailableCars(availableCars);
+        placeRepo.save(place);
+    }
+
+    @Override
+    public void editPlace(Long id, Place placeEdit) {
+        Place place = getPlaceById(id);
+        place = placeEdit;
+        placeRepo.save(place);
+    }
 }

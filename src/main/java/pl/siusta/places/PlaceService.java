@@ -11,4 +11,7 @@ public interface PlaceService {
     void addPlace(Place place);
     List<Place> getPlaceByCity(String city);
     void deletePlace(Long id);
+    void editAllCars(Long id, int allCars);
+    void editAvailableCars(Long id, int availableCars);
+    void editPlace(Long id,Place place);
 }
