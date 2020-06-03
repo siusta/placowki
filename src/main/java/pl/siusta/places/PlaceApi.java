@@ -24,53 +24,58 @@ public class PlaceApi {
     @GetMapping("/all")
     public ResponseEntity<List<Place>> getAllPlaces(){
         List<Place>carList=placeService.getAllPlaces();
-        if(!carList.isEmpty()) {return new ResponseEntity<>(carList, HttpStatus.ACCEPTED);}
+        if(!carList.isEmpty()) {return new ResponseEntity<>(carList, HttpStatus.FOUND);}
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/getById/{id}")
-    public Place getPlaceById(@PathVariable Long id){
+    public ResponseEntity<Place> getPlaceById(@PathVariable Long id){
         Place place = placeService.getPlaceById(id);
-        if(place != null) return place;
-        else return null;
+        if(place != null) return new ResponseEntity<>(place,HttpStatus.FOUND);
+        else return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/getByName")
-    public Place getPlaceByName(@RequestParam String name){
+    public ResponseEntity<Place> getPlaceByName(@RequestParam String name){
         Place place = placeService.getPlaceByName(name);
-        if(place != null) return place;
-        else return null;
+        if(place != null) return new ResponseEntity<>(place,HttpStatus.FOUND);
+        else return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/getByCity")
-    public List<Place> getPlaceByCity(@RequestParam String city){
+    public ResponseEntity<List<Place>> getPlaceByCity(@RequestParam String city){
         List<Place> placeList = placeService.getPlaceByCity(city);
-        if(placeList.isEmpty()) return null;
-        else return placeList;
+        if(placeList.isEmpty()) return new ResponseEntity<>(placeList,HttpStatus.FOUND);
+        else return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @PostMapping("/add")
-    public void addPlace(@RequestBody Place newPlace){
-        placeService.addPlace(newPlace);
+    public ResponseEntity addPlace(@RequestBody Place newPlace){
+        if(placeService.addPlace(newPlace)) return new ResponseEntity(HttpStatus.CREATED);
+        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deletePlace(@PathVariable Long id){
-        placeService.deletePlace(id);
+    public ResponseEntity deletePlace(@PathVariable Long id){
+       if(placeService.deletePlace(id))return new ResponseEntity(HttpStatus.OK);
+       else return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
     @PutMapping("/editAllCars/{id}/{allCars}")
-    public void editAllCars(@PathVariable Long id,@PathVariable int allCars){
-        placeService.editAllCars(id,allCars);
+    public ResponseEntity  editAllCars(@PathVariable Long id,@PathVariable int allCars){
+        if(placeService.editAllCars(id,allCars))return new ResponseEntity(HttpStatus.OK);
+        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
     @PutMapping("/editAvailable/{id}/{availableCars}")
-    public void editAviableCars(@PathVariable Long id,@PathVariable int availableCars){
-        placeService.editAvailableCars(id,availableCars);
+    public ResponseEntity editAviableCars(@PathVariable Long id,@PathVariable int availableCars){
+        if(placeService.editAvailableCars(id,availableCars))return new ResponseEntity(HttpStatus.OK);
+        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
     @PutMapping("/editPlace/{id}")
-    public @ResponseBody void  editPlace(@PathVariable Long id, @RequestBody Place place){
-        placeService.editPlace(id,place);
+    public @ResponseBody ResponseEntity  editPlace(@PathVariable Long id, @RequestBody Place place){
+        if(placeService.editPlace(id,place))return new ResponseEntity(HttpStatus.OK);
+        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 }

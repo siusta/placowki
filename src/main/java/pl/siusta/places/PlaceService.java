@@ -8,10 +8,10 @@ public interface PlaceService {
     List<Place> getAllPlaces();
     Place getPlaceById(Long id);
     Place getPlaceByName(String name);
-    void addPlace(Place place);
+    boolean addPlace(Place place);
     List<Place> getPlaceByCity(String city);
-    void deletePlace(Long id);
-    void editAllCars(Long id, int allCars);
-    void editAvailableCars(Long id, int availableCars);
-    void editPlace(Long id,Place place);
+    boolean deletePlace(Long id);
+    boolean editAllCars(Long id, int allCars);
+    boolean editAvailableCars(Long id, int availableCars);
+    boolean editPlace(Long id,Place place);
 }

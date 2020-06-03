@@ -33,8 +33,9 @@ public class PlaceServiceImpl implements PlaceService{
     }
 
     @Override
-    public void addPlace(Place place){
+    public boolean addPlace(Place place){
         placeRepo.save(place);
+        return true;
     }
 
     @Override
@@ -44,28 +45,33 @@ public class PlaceServiceImpl implements PlaceService{
     }
 
     @Override
-    public void deletePlace(Long id) {
+    public boolean deletePlace(Long id) {
         placeRepo.deleteById(id);
+        return true;
+
     }
 
     @Override
-    public void editAllCars(Long id, int allCars) {
+    public boolean editAllCars(Long id, int allCars) {
         Place place = getPlaceById(id);
         place.setAllCars(allCars);
         placeRepo.save(place);
+        return true;
     }
 
     @Override
-    public void editAvailableCars(Long id, int availableCars) {
+    public boolean editAvailableCars(Long id, int availableCars) {
         Place place = getPlaceById(id);
         place.setAvailableCars(availableCars);
         placeRepo.save(place);
+        return true;
     }
 
     @Override
-    public void editPlace(Long id, Place placeEdit) {
+    public boolean editPlace(Long id, Place placeEdit) {
         Place place = getPlaceById(id);
         place = placeEdit;
         placeRepo.save(place);
+        return true;
     }
 }
