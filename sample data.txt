@@ -1,0 +1,8 @@
+id	name					owner		city		street			buildingNumber	latitude	longitude	allCars	availableCars
+1	Auto Wypożyczalnia		Aleksander	Tarnów		Nowodąbrowska	56				50.032733	21.000145	13		8
+2	Cars Paradise			Ludwik		Rzeszów		Hetmańska		32				50.024173	21.994898	23		15
+3	Endrju Rental			Andrzej		Przeworsk	Tatarska		30				50.053779	22.507311	18		9		
+4	Cool Rental				Adam		Przeworsk	Żytnia			14				50.052235	22.485239	19		13
+5	Wypożyczalnia Zbyszka	Zbyszek		Kraków		Rusznikarska	13				50.085824	19.926218	20		17
+
+
