@@ -1,8 +1,56 @@
-id	name					owner		city		street			buildingNumber	latitude	longitude	allCars	availableCars
-1	Auto Wypożyczalnia		Aleksander	Tarnów		Nowodąbrowska	56				50.032733	21.000145	13		8
-2	Cars Paradise			Ludwik		Rzeszów		Hetmańska		32				50.024173	21.994898	23		15
-3	Endrju Rental			Andrzej		Przeworsk	Tatarska		30				50.053779	22.507311	18		9		
-4	Cool Rental				Adam		Przeworsk	Żytnia			14				50.052235	22.485239	19		13
-5	Wypożyczalnia Zbyszka	Zbyszek		Kraków		Rusznikarska	13				50.085824	19.926218	20		17
+id: 1
+name: Auto Wypożyczalnia
+owner: Aleksander
+city: Tarnów
+street: Nowodąbrowska
+buildingNumber: 56
+latitude: 50.032733
+longitude: 21.000145
+allCars: 13
+availableCars: 8
+
+id: 
+name: Cars Paradise
+owner: Ludwik
+city: Rzeszów
+street: Hetmańska
+buildingNumber: 32
+latitude: 50.024173
+longitude: 21.994898
+allCars: 23
+availableCars: 15
+
+id: 3
+name: Endrju Rental
+owner: Andrzej
+city: Przeworsk
+street: Tatarska
+buildingNumber: 30
+latitude: 50.053779
+longitude: 22.507311
+allCars: 18
+availableCars: 9
+
+id: 4
+name: Cool Rental
+owner: Adam
+city: Przeworsk
+street: Żytnia
+buildingNumber: 14
+latitude: 50.052235
+longitude: 22.485239
+allCars: 19
+availableCars: 13
+
+id: 5
+name: Wypożyczalnia Zbyszka
+owner: Zbyszek
+city: Kraków
+street: Rusznikarska
+buildingNumber: 13
+latitude: 50.085824
+longitude: 19.926218
+allCars: 20
+availableCars: 17
 
 
