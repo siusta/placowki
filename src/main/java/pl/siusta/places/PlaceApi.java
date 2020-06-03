@@ -45,7 +45,7 @@ public class PlaceApi {
     @GetMapping("/getByCity")
     public ResponseEntity<List<Place>> getPlaceByCity(@RequestParam String city){
         List<Place> placeList = placeService.getPlaceByCity(city);
-        if(placeList.isEmpty()) return new ResponseEntity<>(placeList,HttpStatus.FOUND);
+        if(!placeList.isEmpty()) return new ResponseEntity<>(placeList,HttpStatus.FOUND);
         else return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
