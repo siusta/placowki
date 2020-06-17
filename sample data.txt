@@ -6,8 +6,6 @@ street: Nowodąbrowska
 buildingNumber: 56
 latitude: 50.032733
 longitude: 21.000145
-allCars: 13
-availableCars: 8
 
 id: 
 name: Cars Paradise
@@ -17,8 +15,6 @@ street: Hetmańska
 buildingNumber: 32
 latitude: 50.024173
 longitude: 21.994898
-allCars: 23
-availableCars: 15
 
 id: 3
 name: Endrju Rental
@@ -28,8 +24,6 @@ street: Tatarska
 buildingNumber: 30
 latitude: 50.053779
 longitude: 22.507311
-allCars: 18
-availableCars: 9
 
 id: 4
 name: Cool Rental
@@ -39,8 +33,6 @@ street: Żytnia
 buildingNumber: 14
 latitude: 50.052235
 longitude: 22.485239
-allCars: 19
-availableCars: 13
 
 id: 5
 name: Wypożyczalnia Zbyszka
@@ -50,7 +42,3 @@ street: Rusznikarska
 buildingNumber: 13
 latitude: 50.085824
 longitude: 19.926218
-allCars: 20
-availableCars: 17
-
-
