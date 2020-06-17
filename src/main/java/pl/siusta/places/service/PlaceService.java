@@ -1,6 +1,6 @@
-package pl.siusta.places;
+package pl.siusta.places.service;
 
-import pl.siusta.places.Place;
+import pl.siusta.places.model.Place;
 
 import java.util.List;
 
@@ -11,7 +11,5 @@ public interface PlaceService {
     boolean addPlace(Place place);
     List<Place> getPlaceByCity(String city);
     boolean deletePlace(Long id);
-    boolean editAllCars(Long id, int allCars);
-    boolean editAvailableCars(Long id, int availableCars);
     boolean editPlace(Long id,Place place);
 }

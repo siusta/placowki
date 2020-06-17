@@ -1,14 +1,15 @@
-package pl.siusta.places;
+package pl.siusta.places.service;
 
 import org.springframework.stereotype.Service;
-import pl.siusta.places.Place;
-import pl.siusta.places.PlaceRepo;
+import pl.siusta.places.model.Place;
+import pl.siusta.places.repo.PlaceRepo;
+import pl.siusta.places.service.PlaceService;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PlaceServiceImpl implements PlaceService{
+public class PlaceServiceImpl implements PlaceService {
     private PlaceRepo placeRepo;
 
     public PlaceServiceImpl(PlaceRepo placeRepo){
@@ -49,22 +50,6 @@ public class PlaceServiceImpl implements PlaceService{
         placeRepo.deleteById(id);
         return true;
 
-    }
-
-    @Override
-    public boolean editAllCars(Long id, int allCars) {
-        Place place = getPlaceById(id);
-        place.setAllCars(allCars);
-        placeRepo.save(place);
-        return true;
-    }
-
-    @Override
-    public boolean editAvailableCars(Long id, int availableCars) {
-        Place place = getPlaceById(id);
-        place.setAvailableCars(availableCars);
-        placeRepo.save(place);
-        return true;
     }
 
     @Override

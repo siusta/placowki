@@ -1,8 +1,8 @@
-package pl.siusta.places;
+package pl.siusta.places.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.siusta.places.Place;
+import pl.siusta.places.model.Place;
 
 import java.util.List;
 

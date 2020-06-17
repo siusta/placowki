@@ -1,10 +1,8 @@
-package pl.siusta.places;
+package pl.siusta.places.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.awt.*;
 
 @Entity
 public class Place {
@@ -20,8 +18,6 @@ public class Place {
     private int buildingNumber;
     private Double latitude;
     private Double longitude;
-    private int allCars;
-    private int availableCars;
 
     public Place() {
     }
@@ -34,8 +30,6 @@ public class Place {
         this.buildingNumber = buildingNumber;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.allCars = allCars;
-        this.availableCars = availableCars;
     }
 
     public Long getId() {
@@ -98,21 +92,7 @@ public class Place {
         this.longitude = longitude;
     }
 
-    public int getAllCars() {
-        return allCars;
-    }
 
-    public void setAllCars(int allCars) {
-        this.allCars = allCars;
-    }
-
-    public int getAvailableCars() {
-        return availableCars;
-    }
-
-    public void setAvailableCars(int availableCars) {
-        this.availableCars = availableCars;
-    }
 
     @Override
     public String toString() {
@@ -125,8 +105,6 @@ public class Place {
                 ", buildingNumber=" + buildingNumber +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
-                ", allCars=" + allCars +
-                ", availableCars=" + availableCars +
                 '}';
     }
 }

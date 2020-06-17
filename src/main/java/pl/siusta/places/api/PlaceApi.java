@@ -1,12 +1,12 @@
-package pl.siusta.places;
+package pl.siusta.places.api;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.siusta.places.Place;
-import pl.siusta.places.PlaceService;
+import pl.siusta.places.service.PlaceService;
+import pl.siusta.places.model.Place;
 
 import java.util.List;
 
@@ -15,6 +15,7 @@ import java.util.List;
 public class PlaceApi {
 
     private PlaceService placeService;
+
 
     @Autowired
     public PlaceApi(PlaceService placeService){
@@ -59,18 +60,6 @@ public class PlaceApi {
     public ResponseEntity deletePlace(@PathVariable Long id){
        if(placeService.deletePlace(id))return new ResponseEntity(HttpStatus.OK);
        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
-    }
-
-    @PutMapping("/editAllCars/{id}/{allCars}")
-    public ResponseEntity  editAllCars(@PathVariable Long id,@PathVariable int allCars){
-        if(placeService.editAllCars(id,allCars))return new ResponseEntity(HttpStatus.OK);
-        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
-    }
-
-    @PutMapping("/editAvailable/{id}/{availableCars}")
-    public ResponseEntity editAviableCars(@PathVariable Long id,@PathVariable int availableCars){
-        if(placeService.editAvailableCars(id,availableCars))return new ResponseEntity(HttpStatus.OK);
-        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
     @PutMapping("/editPlace/{id}")
