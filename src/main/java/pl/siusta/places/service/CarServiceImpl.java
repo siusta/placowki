@@ -1,5 +1,6 @@
 package pl.siusta.places.service;
 
+import org.springframework.stereotype.Service;
 import pl.siusta.places.model.Car;
 import pl.siusta.places.repo.CarRepo;
 import pl.siusta.places.service.CarService;
@@ -7,6 +8,7 @@ import pl.siusta.places.service.CarService;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CarServiceImpl implements CarService {
     private CarRepo carRepo;
 
@@ -32,6 +34,12 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public Car getCarById(Long id) {
+        Optional<Car> car = carRepo.findById(id);
+        return car.get();
+    }
+
+    @Override
     public boolean addCarToPlace(Long placeId, Long id) {
         carRepo.save( new Car(id,placeId,true));
         return true;
@@ -45,12 +53,14 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public boolean changeAvailability(Long id) {
-        Optional<Car> car = carRepo.findById(id);
-        if(car.get().getAvailable()){
-            car.get().setAvailable(false);
+        Car car = getCarById(id);
+        if(car.getAvailable()){
+            car.setAvailable(false);
+
         } else {
-            car.get().setAvailable(true);
+            car.setAvailable(true);
         }
+        carRepo.save(car);
         return true;
     }
 }
