@@ -9,6 +9,7 @@ import pl.siusta.places.model.Car;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/places/cars")
 public class CarApi {

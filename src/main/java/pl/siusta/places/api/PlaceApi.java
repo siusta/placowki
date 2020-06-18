@@ -10,6 +10,7 @@ import pl.siusta.places.model.Place;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/places")
 public class PlaceApi {
