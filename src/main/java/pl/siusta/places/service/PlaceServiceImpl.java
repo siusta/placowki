@@ -3,7 +3,6 @@ package pl.siusta.places.service;
 import org.springframework.stereotype.Service;
 import pl.siusta.places.model.Place;
 import pl.siusta.places.repo.PlaceRepo;
-import pl.siusta.places.service.PlaceService;
 
 import java.util.List;
 import java.util.Optional;

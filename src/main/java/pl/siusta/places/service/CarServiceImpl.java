@@ -3,7 +3,6 @@ package pl.siusta.places.service;
 import org.springframework.stereotype.Service;
 import pl.siusta.places.model.Car;
 import pl.siusta.places.repo.CarRepo;
-import pl.siusta.places.service.CarService;
 
 import java.util.List;
 import java.util.Optional;

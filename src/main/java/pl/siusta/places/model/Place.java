@@ -2,7 +2,6 @@ package pl.siusta.places.model;
 
 
 import javax.persistence.*;
-import java.awt.*;
 
 @Entity
 public class Place {

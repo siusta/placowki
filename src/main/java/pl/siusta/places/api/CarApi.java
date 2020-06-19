@@ -1,8 +1,6 @@
 package pl.siusta.places.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.siusta.places.service.CarService;
 import pl.siusta.places.model.Car;
@@ -21,42 +19,36 @@ public class CarApi {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Car>> getAllCars(){
+    public List<Car> getAllCars(){
         List<Car>carList=carService.getAllCars();
-        if(!carList.isEmpty()) {return new ResponseEntity<>(carList, HttpStatus.FOUND);}
-        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        return carList;
     }
 
     @GetMapping("/all/{placeId}")
-    public ResponseEntity<List<Car>> getCarsInPlace(@PathVariable Long placeId){
+    public List<Car> getCarsInPlace(@PathVariable Long placeId){
         List<Car>carList=carService.getCarsInPlace(placeId);
-        if(!carList.isEmpty()) {return new ResponseEntity<>(carList, HttpStatus.FOUND);}
-        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        return carList;
     }
 
     @GetMapping("/available/{placeId}")
-    public ResponseEntity<List<Car>> getAvCarsInPlace(@PathVariable Long placeId){
+    public List<Car> getAvCarsInPlace(@PathVariable Long placeId){
         List<Car>carList=carService.getAvInPlace(placeId);
-        if(!carList.isEmpty()) {return new ResponseEntity<>(carList, HttpStatus.FOUND);}
-        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        return carList;
     }
 
     @PostMapping("/addCarToPlace/{placeId}/{carId}")
-    public ResponseEntity addCar(@PathVariable Long placeId, @PathVariable Long carId){
-        if(carService.addCarToPlace(placeId, carId)) return new ResponseEntity(HttpStatus.CREATED);
-        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    public void addCar(@PathVariable Long placeId, @PathVariable Long carId){
+        carService.addCarToPlace(placeId, carId);
     }
 
     @PutMapping("/changeStatus/{carId}")
-    public ResponseEntity changeStatus(@PathVariable Long carId){
-        if(carService.changeAvailability(carId)) return new ResponseEntity(HttpStatus.OK);
-        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    public void changeStatus(@PathVariable Long carId){
+        carService.changeAvailability(carId);
     }
 
     @DeleteMapping("/delete/{carId}")
-    public ResponseEntity deleteCar(@PathVariable Long carId){
-        if(carService.deleteCar(carId)) return new ResponseEntity(HttpStatus.OK);
-        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    public void deleteCar(@PathVariable Long carId){
+        carService.deleteCar(carId);
     }
 
 }
