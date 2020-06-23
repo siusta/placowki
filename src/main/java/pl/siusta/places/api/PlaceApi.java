@@ -59,4 +59,9 @@ public class PlaceApi {
     public @ResponseBody void  editPlace(@PathVariable Long id, @RequestBody Place place){
         placeService.editPlace(id,place);
     }
+
+    @GetMapping("/test")
+    public Place Place(){
+        return placeService.testPlace();
+    }
 }

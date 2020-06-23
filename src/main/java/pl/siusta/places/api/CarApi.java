@@ -51,4 +51,9 @@ public class CarApi {
         carService.deleteCar(carId);
     }
 
+    @GetMapping("/test")
+    public Car testCar(){
+        return carService.testCar();
+    }
+
 }

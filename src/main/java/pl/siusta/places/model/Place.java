@@ -21,7 +21,7 @@ public class Place {
     public Place() {
     }
 
-    public Place(String name, String owner, String city, String street, int buildingNumber, Double latitude, Double longitude, int allCars, int availableCars) {
+    public Place(String name, String owner, String city, String street, int buildingNumber, Double latitude, Double longitude) {
         this.name = name;
         this.owner = owner;
         this.city = city;

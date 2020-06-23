@@ -62,4 +62,9 @@ public class CarServiceImpl implements CarService {
         carRepo.save(car);
         return true;
     }
+
+    @Override
+    public Car testCar() {
+        return new Car(null,null,null);
+    }
 }

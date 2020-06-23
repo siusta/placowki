@@ -42,4 +42,5 @@ public class Car {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
+
 }

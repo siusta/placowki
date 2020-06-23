@@ -12,4 +12,5 @@ public interface PlaceService {
     List<Place> getPlaceByCity(String city);
     boolean deletePlace(Long id);
     boolean editPlace(Long id,Place place);
+    Place testPlace();
 }

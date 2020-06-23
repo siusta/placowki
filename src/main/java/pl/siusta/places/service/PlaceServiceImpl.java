@@ -58,4 +58,9 @@ public class PlaceServiceImpl implements PlaceService {
         placeRepo.save(place);
         return true;
     }
+
+    @Override
+    public Place testPlace() {
+        return new Place("","","","",0,0.0,0.0);
+    }
 }

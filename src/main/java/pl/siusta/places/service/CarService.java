@@ -12,4 +12,5 @@ public interface CarService {
     boolean addCarToPlace(Long placeId, Long id);
     boolean deleteCar(Long id);
     boolean changeAvailability(Long id);
+    Car testCar();
 }
