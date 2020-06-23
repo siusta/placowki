@@ -1,9 +1,14 @@
 package pl.siusta.places.service;
 
+import org.json.JSONObject;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import pl.siusta.places.model.Car;
 import pl.siusta.places.repo.CarRepo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,6 +66,19 @@ public class CarServiceImpl implements CarService {
         }
         carRepo.save(car);
         return true;
+    }
+
+    @Override
+    public List<Object> getCarDetails(List<Car> carList) {
+        List<Object> carDetails=new ArrayList<>();
+        for (Car car : carList
+        ) {
+            String url ="https://pkowaleckicarsapi.herokuapp.com/getVechicleDetails/"+car.getId();
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<Object> response = restTemplate.exchange(url, HttpMethod.GET, null, Object.class);
+            carDetails.add(JSONObject.wrap(response.getBody()));
+        }
+        return carDetails;
     }
 
     @Override

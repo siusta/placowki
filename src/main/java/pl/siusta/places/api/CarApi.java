@@ -1,6 +1,7 @@
 package pl.siusta.places.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pl.siusta.places.service.CarService;
 import pl.siusta.places.model.Car;
@@ -24,16 +25,16 @@ public class CarApi {
         return carList;
     }
 
-    @GetMapping("/all/{placeId}")
-    public List<Car> getCarsInPlace(@PathVariable Long placeId){
+    @GetMapping(value = "/all/{placeId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getCarsInPlace(@PathVariable Long placeId){
         List<Car>carList=carService.getCarsInPlace(placeId);
-        return carList;
+        return carService.getCarDetails(carList).toString();
     }
 
-    @GetMapping("/available/{placeId}")
-    public List<Car> getAvCarsInPlace(@PathVariable Long placeId){
+    @GetMapping(value = "/available/{placeId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getAvCarsInPlace(@PathVariable Long placeId){
         List<Car>carList=carService.getAvInPlace(placeId);
-        return carList;
+        return carService.getCarDetails(carList).toString();
     }
 
     @PostMapping("/addCarToPlace/{placeId}/{carId}")
